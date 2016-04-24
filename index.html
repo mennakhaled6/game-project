@@ -47,8 +47,8 @@ Your browser does not support the audio element.
 var mainMusic = document.getElementById("audio"),
 foodMusic = document.getElementById("audio1");
 var person="player";
-var players=["ahmed","mohamed","yasmine","mazen","dina","lolo","noureen","soso","dodo","mimi"];
-var scores=["10","9","8","7","6","5","4","3","2","1"];
+var scores = JSON.parse(localStorage.getItem("scorezz45"))||["10","9","8","7","6","5","4","3","2","1"];
+var players = JSON.parse(localStorage.getItem("names45"))||["ahmed","mohamed","yasmine","mazen","dina","lolo","noureen","soso","dodo","mimi"];
 var score1=0;
 var COLS = 26,
 ROWS = 26,
@@ -257,7 +257,9 @@ function topten()
            	    scores[j]=scores[j-1];
            	 };
            	 scores[i]=score1;
-i     };
+i     
+      };
+      
 	
 
      
@@ -269,6 +271,8 @@ i     };
            	 };
            	 players[i]=name;
 i     };
+localStorage.setItem("scorezz45", JSON.stringify(scores));
+localStorage.setItem("names45", JSON.stringify(players));
 
 }
 
